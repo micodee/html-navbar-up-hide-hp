@@ -10,6 +10,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s ease-in;
 }
 nav ul li a {
   color: white;
@@ -27,13 +28,49 @@ nav .menu-toggle {
 
 @media (max-width: 650px) {
   nav ul {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 40vh;
+    background-color: red;
+    border-radius: 0 0 0 60px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 3rem;
+    transform: translateY(-180%);
+    transition: all 0.5s;
+  }
+  nav ul.slider {
+    height: 40vh;
+    opacity: 1;
+    transform: translateY(0);
   }
   nav .menu-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+  }
+  nav .menu-toggle input {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99;
+  }
+  nav .menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(4px, -2px);
+  }
+  nav .menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(4px, 2px);
+  }
+  nav .menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
   }
   nav .menu-toggle span {
     display: block;
@@ -42,5 +79,12 @@ nav .menu-toggle {
     border-radius: 0.5rem;
     margin: 3px;
     background-color: white;
+    transition: all 0.5s;
+  }
+  nav .menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+  }
+  nav .menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
   }
 }/*# sourceMappingURL=navbar.css.map */
