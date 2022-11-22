@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: red;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul li a {
+  color: white;
+  padding: 0.5rem 0.9rem;
+  margin: 0.1rem;
+}
+nav ul li a:hover {
+  color: red;
+  background: white;
+  border-radius: 0.7rem;
+}
+nav .menu-toggle {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  nav ul {
+    display: none;
+  }
+  nav .menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  nav .menu-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    border-radius: 0.5rem;
+    margin: 3px;
+    background-color: white;
+  }
+}/*# sourceMappingURL=navbar.css.map */
