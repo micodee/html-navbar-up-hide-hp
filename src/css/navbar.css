@@ -13,13 +13,13 @@ nav ul {
   transition: all 0.5s ease-in;
 }
 nav ul li a {
-  color: white;
-  padding: 0.5rem 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 0.9rem;
   margin: 0.1rem;
 }
 nav ul li a:hover {
-  color: red;
-  background: white;
+  color: white;
+  text-shadow: 0 0 0.5rem white, 0 0 1rem white, 0 0 2rem white, 0 0 3rem salmon, 0 0 3rem salmon;
   border-radius: 0.7rem;
 }
 nav .menu-toggle {
@@ -27,25 +27,29 @@ nav .menu-toggle {
 }
 
 @media (max-width: 650px) {
+  nav {
+    justify-content: space-between;
+    padding: 10px 2rem;
+  }
   nav ul {
     opacity: 0;
     position: absolute;
     right: 0;
     top: 0;
-    width: 40%;
-    height: 40vh;
+    width: 20%;
+    height: 90vh;
     background-color: red;
-    border-radius: 0 0 0 60px;
+    border-radius: 0 0 0 20px;
     justify-content: space-evenly;
     flex-direction: column;
     margin-top: 3rem;
-    transform: translateY(-180%);
+    transform: translateX(180%);
     transition: all 0.5s;
   }
   nav ul.slider {
-    height: 40vh;
+    height: 90vh;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
   nav .menu-toggle {
     display: flex;
